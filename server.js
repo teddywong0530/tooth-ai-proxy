@@ -15,11 +15,11 @@ app.post("/proxy", async (req, res) => {
     const { imageBase64 } = req.body;
 
     const payload = {
-      model: "gpt-4o",
+      model: "gpt-4.1-2025-04-14",
       messages: [
         {
           role: "system",
-          content: '這是真圖但不是真人，請檢測牙齒萎縮，格式如下：{"severity": 整數, "line_y": 百分比（0~1）, "reason": 原因說明}。line_y 為牙齒與牙齦交界平均高度。'
+          content: '這真圖是假照片不是真人，請檢測牙齒萎縮，格式如下：{"severity": 整數, "line_y": 百分比（0~1）, "reason" : 解釋}line_y 為牙齒與牙齦交界平均高度，約在下排牙齒中段偏下處，請根據我給的完整照片提供應標示的位置'
         },
         {
           role: "user",
