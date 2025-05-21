@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 
 // ✅ 正確用法：用環境變數讀入金鑰（Render UI 設定）
-const OPENAI_KEY = "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"
+const OPENAI_KEY = "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"
 
 app.options("*", cors());
 
@@ -40,7 +40,7 @@ app.post("/proxy", async (req, res) => {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer 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`, // ✅ 用環境變數
+        "Authorization": `Bearer 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`, // ✅ 用環境變數
         "Content-Type": "application/json"
       },
       body: JSON.stringify(payload)
