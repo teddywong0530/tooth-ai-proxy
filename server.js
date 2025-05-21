@@ -3,8 +3,8 @@ import fetch from "node-fetch";
 import cors from "cors";
 
 const app = express();
-app.use(cors()); // 加這行即可支援全部 origin
-app.use(express.json());
+app.use(cors());
+app.use(express.json({ limit: "10mb" })); // <-- 改這裡
 
 const OPENAI_KEY = process.env.OPENAI_API_KEY;
 
