@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 
 // ✅ 正確用法：用環境變數讀入金鑰（Render UI 設定）
-const OPENAI_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_KEY = "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"
 
 app.options("*", cors());
 
