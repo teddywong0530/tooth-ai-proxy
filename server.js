@@ -6,9 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 
-// ✅ 正確用法：用環境變數讀入金鑰（Render UI 設定）
-const OPENAI_KEY = "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"
 
+const OPENAI_KEY = process.env.OPENAI_KEY; // ✅ 用 Render 設定的環境變數
 app.options("*", cors());
 
 app.post("/proxy", async (req, res) => {
@@ -40,7 +39,7 @@ app.post("/proxy", async (req, res) => {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer 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`, // ✅ 用環境變數
+        "Authorization": `Bearer ${OPENAI_KEY}`, // ✅ 用環境變數
         "Content-Type": "application/json"
       },
       body: JSON.stringify(payload)
