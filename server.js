@@ -38,7 +38,7 @@ app.post("/proxy", async (req, res) => {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${OPENAI_KEY}`,
+        "Authorization": `Bearer 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`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(payload)
