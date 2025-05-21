@@ -40,7 +40,7 @@ app.post("/proxy", async (req, res) => {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${OPENAI_KEY}`, // ✅ 用環境變數
+        "Authorization": `Bearer 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`, // ✅ 用環境變數
         "Content-Type": "application/json"
       },
       body: JSON.stringify(payload)
